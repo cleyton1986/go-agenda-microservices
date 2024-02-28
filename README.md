@@ -1,4 +1,12 @@
+<img style='max-height: 200px; width:100%' alt="Top go" src="./assets/golangheader.png"/>
+
 # Projeto de um microservices em Go(GoLang)
+
+</br></br>
+
+<p align="center">
+<img style='max-height: 200px; width:200px' alt="Top go" src="./assets/logoGo.png"/>
+</p>
 
 # Agenda Telefônica em Go
 
@@ -35,4 +43,3 @@ Contribuições são bem-vindas! Se você tem sugestões para melhorar este proj
 ## Licença
 
 Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
