@@ -23,6 +23,14 @@ Este projeto implementa uma agenda telefônica simples utilizando a linguagem Go
 
 - **Linguagem Go**: Escolhida por sua simplicidade, eficiência e excelente suporte para concorrência.
 - **SQLite**: Banco de dados leve que oferece uma ótima solução para aplicações de pequena a média escala.
+- **IDE VS-CODE**: Utilizada a IDE para o desenvolvimento desse projeto foi o Visual Studio Code, por ser mais simples a instalação,gratúito e com vários recursos.
+
+Foram instaladas as seguintes extensões e recursos:
+
+- **Go**: Para a IDE usar os snippets corretos e a intelisense da ide para a linguagem Go
+- **REST Client**: Para executar as chamdas HTTP que serão feitas para o micro-serviço.
+- **Air**: Para live reload de aplicações go, onde será feita a reinicialização a cada alteração no código.
+- **Gin Web Framework**:
 
 ## Estrutura do Projeto
 
@@ -31,6 +39,7 @@ O projeto é estruturado da seguinte forma:
 - **Modelo de Dados**: Definição das estruturas de dados e esquema do banco de dados.
 - **Lógica de Negócio**: Implementação das funcionalidades da agenda, incluindo operações CRUD.
 - **Interface de Usuário**: CLI para interação com o usuário, permitindo gerenciar a agenda de forma eficaz.
+- **Gin Web Framework**: Gin é uma estrutura web HTTP escrita em Go (Golang).
 
 ## Como Executar
 
