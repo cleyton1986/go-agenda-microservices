@@ -1,6 +1,11 @@
-package entities
+package models
 
-import "time"
+import (
+	"fmt"
+	"time"
+
+	error_pkg "github.com/cleyton1986/go-agenda-microservices/src/cmd/pkg/error/"
+)
 
 type Contact struct {
 	ID        uint      `json:"id"`
@@ -11,7 +16,7 @@ type Contact struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-func NewContact(name, surname, email string) *Contact {
+func NewContact(name, surname, email string) (*Contact, error) {
 	contact := &Contact{
 		Name:      name,
 		Surname:   surname,
@@ -26,18 +31,24 @@ func NewContact(name, surname, email string) *Contact {
 		return nil, err
 	}
 
-	return contact
+	return contact, nil
 }
 
 
 func (c*Contact) IsValid() error {
 
+	ec := error_pkg.NewErrorCollection()
 
-	if (len(c.Name) < 5){
-		return fmt.Error("O nome não pode ter menos de 5 caracter. nome só têm %d", len(c.Name))
+	if len(c.Name) < 5 {
+		ec.Add(fmt.Errorf(" nome não pode ter menos de 5 caracter. nome só têm %d", len(c.Name)))
+	}
+
+	if ec.HasErrors() {
+		return ec.Throw()
 	}
 
 	return nil
+
 }
 
 
