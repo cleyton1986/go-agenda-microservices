@@ -1,1 +1,12 @@
 GET http://localhost:3033/status
+
+###
+
+POST http://localhost:3033/contacts
+Content-Type: application/json
+
+{
+  "name":"Cleyton",
+  "surname":"Alves",
+  "email":"cleyton1986@gmail.com"
+}
