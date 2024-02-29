@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	error_pkg "github.com/cleyton1986/go-agenda-microservices/src/cmd/pkg/error/"
+	errpkg "github.com/cleyton1986/go-agenda-microservices/src/cmd/pkg/error"
 )
 
 type Contact struct {
@@ -34,13 +34,11 @@ func NewContact(name, surname, email string) (*Contact, error) {
 	return contact, nil
 }
 
-
-func (c*Contact) IsValid() error {
-
-	ec := error_pkg.NewErrorCollection()
+func (c *Contact) IsValid() error {
+	ec := errpkg.NewErrorCollection()
 
 	if len(c.Name) < 5 {
-		ec.Add(fmt.Errorf(" nome não pode ter menos de 5 caracter. nome só têm %d", len(c.Name)))
+		ec.Add(fmt.Errorf("nome não pode ter menos de 5 caracteres. O nome tem apenas %d caracteres", len(c.Name)))
 	}
 
 	if ec.HasErrors() {
@@ -48,7 +46,4 @@ func (c*Contact) IsValid() error {
 	}
 
 	return nil
-
 }
-
-
